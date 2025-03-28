@@ -22,7 +22,7 @@ build:
         manual:
           - src: "src/**/*.js"
             dest: .
-    - image: ashuz057/expensio-expense
+    - image: karthiksp22/user
       context: ./services/expense
       docker:
         dockerfile: Dockerfile
