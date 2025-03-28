@@ -231,7 +231,7 @@ FinXpert's architecture is built around microservices, each responsible for spec
   - **OTP Limits**:
     - Be mindful of OTP request limits to avoid temporary lockouts.
   - **Data Privacy**:
-    - All your data is securely stored and encrypted.
+    - All you data is securely stored and encrypted.
     - Avoid entering any confidential info in the guest user account, as it is public.
 
 ---
