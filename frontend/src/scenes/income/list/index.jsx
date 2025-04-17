@@ -33,6 +33,7 @@ import { useNavigate } from "react-router-dom";
 import ConfirmationDialog from "../../../components/ConfirmationDialog";
 import AnimatedLoadingIndicator from "../../../components/AnimatedLoadingIndicator";
 import ErrorDisplay from "../../../components/error/ErrorDisplay";
+import { CustomToolbar } from "../../../components/CustomToolBarMuiDataGrid";
 
 // Styled components using styled API
 const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
@@ -455,6 +456,9 @@ const IncomeListScreen = () => {
 					paginationMode="server"
 					paginationModel={paginationModel}
 					onPaginationModelChange={setPaginationModel}
+					slots={{
+						toolbar: CustomToolbar,
+					}}
 					disableSelectionOnClick
 					autoHeight
 					onRowClick={handleRowClick}
