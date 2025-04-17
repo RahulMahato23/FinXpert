@@ -42,6 +42,7 @@ export const addSubscriptionToDb = async (name, monthlyTokens) => {
 	const newSubscription = new AiSubscription({
 		name,
 		monthlyTokens,
+		code: name
 	});
 
 	// Save the subscription in the database

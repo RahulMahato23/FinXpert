@@ -267,13 +267,14 @@ const IncomeFinancialData = () => {
 							}}
 						>
 							{data[0].categories.map(
-								({ categoryName, numIncomes, totalAmountEarned }) => (
+								({ categoryName, numIncomes, totalAmountEarned, percentageByAmount }) => (
 									<CustomCard
 										key={categoryName} // Use a unique identifier for the key prop
 										name={categoryName}
 										count={numIncomes}
 										totalAmount={totalAmountEarned}
 										type="Income(s)"
+										percentage={percentageByAmount}
 									/>
 								)
 							)}

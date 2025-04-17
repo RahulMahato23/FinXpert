@@ -50,6 +50,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { startKafka } from "./config/startKafka.js";
 import { connectOpenai } from "./config/connectOpenai.js";
+import { addSubscriptionToDb } from "./services/aiSubscriptionService.js";
 // import { starterFunctions } from "./utils/starterFunctions.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -83,6 +84,7 @@ const startServices = async () => {
 		initializeWebSocket(server); // Initialize WebSocket when services start
 		await connectOpenai();
 		await connectDB();
+		addSubscriptionToDb("free", 10000);
 	} catch (error) {
 		logError("Failed to start services: " + error);
 		process.exit(1);
