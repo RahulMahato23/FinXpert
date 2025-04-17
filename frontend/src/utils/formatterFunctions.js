@@ -7,7 +7,7 @@ export const formatExpenseListData = (expensesData) => {
 		title: expense.title || "No Title", // Ensure there's a title
 		categoryName: expense.categoryId.name || "Uncategorized", // Extract category name
 		amount: expense.amount || 0, // Extract amount
-		dateNtime: dayjs(expense.createdAt).format("DD/MM/YYYY HH:mm:ss"), // Format date and time
+		dateNtime: dayjs(expense.createdAt).format("MM/DD/YYYY HH:mm:ss"), // Format date and time
 		cognitiveTriggers: expense.cognitiveTriggerIds?.length
 			? expense.cognitiveTriggerIds.map((trigger) => trigger.name).join(", ") // Join all cognitive trigger names
 			: "No Triggers", // Handle if no triggers are available
@@ -26,7 +26,7 @@ export const formatIncomeListData = (incomes) => {
 		title: income.title,
 		categoryName: income.categoryId.name, // Using the nested category name
 		amount: Number(income.amount),
-		dateNtime: dayjs(income.createdAt).format("DD/MM/YYYY HH:mm:ss"), // Formatting date and time
+		dateNtime: dayjs(income.createdAt).format("MM/DD/YYYY HH:mm:ss"), // Formatting date and time
 		deletable:
 			income.deletable === undefined || income.deletable === null
 				? true
